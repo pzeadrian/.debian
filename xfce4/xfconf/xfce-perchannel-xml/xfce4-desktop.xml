@@ -45,6 +45,26 @@
           <property name="image-style" type="int" value="3"/>
           <property name="last-image" type="string" value="/home/pzeadrian/wallpapers/tyler-lastovich-ddLiNMqWAOM-01.jpeg"/>
         </property>
+        <property name="workspace1" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/home/pzeadrian/wallpapers/tyler-lastovich-ddLiNMqWAOM-01.jpeg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/home/pzeadrian/wallpapers/tyler-lastovich-ddLiNMqWAOM-01.jpeg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/home/pzeadrian/wallpapers/tyler-lastovich-ddLiNMqWAOM-01.jpeg"/>
+        </property>
+        <property name="workspace4" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/home/pzeadrian/wallpapers/tyler-lastovich-ddLiNMqWAOM-01.jpeg"/>
+        </property>
       </property>
     </property>
   </property>

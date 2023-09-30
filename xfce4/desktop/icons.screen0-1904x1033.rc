@@ -1,15 +1,19 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
+[/home/pzeadrian/Escritorio/Video Completo - Elfos traviesos Molly Poco y Lily Larimar d.mp4]
+row=3
+col=13
+
 [Papelera]
 row=1
 col=13
 
-[/home/pzeadrian]
-row=0
-col=13
-
 [/]
 row=2
+col=13
+
+[/home/pzeadrian]
+row=0
 col=13
 
