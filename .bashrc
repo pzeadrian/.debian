@@ -2,6 +2,11 @@
 # ~/.bashrc
 #
 
+# Run Window Manager directly from TTY
+if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec Hyprland
+fi
+
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
 
