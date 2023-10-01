@@ -1,5 +1,5 @@
 favorites=xfce4-web-browser.desktop,xfce4-mail-reader.desktop,xfce4-file-manager.desktop,xfce4-terminal-emulator.desktop,xfhelp4.desktop
-recent=xfce-wm-settings.desktop,xfce-workspaces-settings.desktop,obsidian_obsidian.desktop,xfce4-web-browser.desktop,brave-browser.desktop,vlc.desktop,xfce4-file-manager.desktop,mpv.desktop,xfce4-terminal-emulator.desktop,lightdm-gtk-greeter-settings.desktop
+recent=brave-browser.desktop,vlc.desktop,firefox_firefox.desktop,xfce4-screensaver-preferences.desktop,xfce4-power-manager-settings.desktop,xfce-display-settings.desktop,obsidian_obsidian.desktop,xfce4-web-browser.desktop,xfce-wm-settings.desktop,xfce-workspaces-settings.desktop
 button-title=\ Apps\ 
 button-icon=xubuntu-logo-menu
 button-single-row=false

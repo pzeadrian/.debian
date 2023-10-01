@@ -31,7 +31,7 @@
       <property name="mode" type="uint" value="0"/>
       <property name="autohide-behavior" type="uint" value="0"/>
       <property name="icon-size" type="uint" value="16"/>
-      <property name="disable-struts" type="bool" value="true"/>
+      <property name="disable-struts" type="bool" value="false"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -79,7 +79,7 @@
       <property name="enable-mpris" type="bool" value="true"/>
       <property name="enable-wnck" type="bool" value="true"/>
       <property name="mixer-command" type="string" value="pavucontrol"/>
-      <property name="mpris-players" type="string" value="brave.instance1491;brave.instance2409;brave.instance2702;brave.instance3305;brave.instance34310;brave.instance35469;brave.instance37044;brave.instance4605;firefox.instance1484;firefox.instance30121;firefox.instance31120;parole;rhythmbox;smplayer;vlc"/>
+      <property name="mpris-players" type="string" value="brave.instance1491;brave.instance1644;brave.instance24056;brave.instance2409;brave.instance2702;brave.instance3305;brave.instance34310;brave.instance35469;brave.instance37044;brave.instance4605;brave.instance6046;firefox.instance12849;firefox.instance14257;firefox.instance1484;firefox.instance30121;firefox.instance31120;parole;rhythmbox;smplayer;vlc;vlc.instance24448"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="plugin-10" type="string" value="clock">
