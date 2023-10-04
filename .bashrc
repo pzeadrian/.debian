@@ -59,7 +59,7 @@ hide() (
 )
 
 # Some other custom aliases I prefer to put right here
-alias cat='bat --style=plain --paging=never' # In debian derivatives is batcat, in other it's just bat
+alias cat='batcat --style=plain --paging=never' # In debian derivatives is batcat, in other it's just bat
 alias ls='exa --group-directories-first'
 alias tree='exa -T'
 alias la='exa -la --group-directories-first'
