@@ -1,6 +1,0 @@
-#! /bin/bash
-
-sudo apt install git curl
-sudo apt install samba smbclient gvfs-fuse gvfs-backends syncthing
-sudo apt install flatpak
-sudo apt install pipewire pipewire-alsa pipewire-jack pipewire-audio wireplumber pipewire-pulse libspa-0.2-bluetooth 
