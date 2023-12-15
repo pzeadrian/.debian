@@ -238,8 +238,8 @@
     for_window [app_id="blueman-manager"] floating enable, resize set 400 400
 
 ## Thunar:
-    for_window [app_id="Thunar"] floating enable, resize set 600 500
-    for_window [app_id="thunar"] floating enable, resize set 600 500
+    for_window [app_id="Thunar"] floating enable, resize set 700 500
+    for_window [app_id="thunar"] floating enable, resize set 700 500
 
 ## Alacritty:
     for_window [app_id="Alacritty"] floating enable
