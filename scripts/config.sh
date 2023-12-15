@@ -14,7 +14,7 @@ if [ -d "$HOME/Documents/" ]; then
     cp -rf $HOME/Documents/.debian/wallpaper/* $HOME/.wallpaper/
 
     read -p "RESOLUTION (1080 or 768): " res
-    sh $HOME/Documents/.debian/scripts/resolution $res
+    bash $HOME/Documents/.debian/scripts/resolution $res
 
 elif [ -d "$HOME/Documentos/" ]; then
     echo "Spanish..."
