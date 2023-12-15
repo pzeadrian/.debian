@@ -231,3 +231,25 @@
 ## Sway
 
     include /etc/sway/config.d/*
+
+#### WINDOW RULES
+    
+## Blueman Manager:
+    for_window [app_id="blueman-manager"] floating enable, resize set 400 400
+
+## Thunar:
+    for_window [app_id="Thunar"] floating enable, resize set 600 500
+    for_window [app_id="thunar"] floating enable, resize set 600 500
+
+## Alacritty:
+    for_window [app_id="Alacritty"] floating enable
+    for_window [app_id="alacritty"] floating enable
+
+## Pavucontrol:
+    for_window [app_id="pavucontrol"] floating enable
+
+## MPV:
+    for_window [app_id="mpv"] floating enable
+
+## G4Music:
+    for_window [app_id="com.github.neithern.g4music"] floating enable
