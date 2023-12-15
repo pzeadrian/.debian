@@ -13,6 +13,12 @@ input "type:keyboard" {
     xkb_options grp:win_space_toggle
 }
 
+input "type:touchpad" {
+    tap enabled
+    natural_scroll disabled
+    dwt enabled
+}
+
 font pango:monospace 0
 titlebar_border_thickness 1
 titlebar_padding 1
