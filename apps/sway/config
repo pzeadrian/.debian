@@ -27,8 +27,9 @@
     font pango:monospace 0
     titlebar_border_thickness 1
     titlebar_padding 1
-    default_border pixel 3
+    default_border pixel 4
     smart_borders on
+    client.focused #a1b56c #a1b56c #a1b56c #a1b56c #a1b56c
 
 ## Variables
 
@@ -191,6 +192,7 @@
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+    bindsym $mod+Shift+a focus child
 
     # Switch the current container between different layout styles
     bindsym $mod+w layout tabbed
