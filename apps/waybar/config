@@ -1,0 +1,82 @@
+{
+	"layer": "top",
+	"position": "top",
+	"margin": "0 0 0 0",
+	"modules-left": [ "sway/workspaces", "custom/separator", "sway/window"],
+	"modules-center": ["clock"],
+	"modules-right": ["tray", "custom/separator", "battery", "custom/separator", "backlight", "custom/separator", "pulseaudio", "custom/separator", "sway/language"],
+
+	"custom/separator": {
+		"format": "|",
+		"interval": "once",
+		"tooltip": false
+	},
+	"sway/window": {
+    		"format": "{app_id}",
+	},
+	"sway/workspaces": {
+		"all-outputs": false,
+		"current-only": false,
+		"format": "{name}",
+		"format-icons": {
+			"active": "",
+			"default": ""
+		},
+		"persistent-workspaces": {
+        	"*": 5
+       	},
+		"disable-click": false
+	},
+	"backlight": {
+	    "device": "intel_backlight",
+	    "format": "{icon}   {percent}%",
+	    "format-icons": ["󰃞", "󰃠"]
+	},
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon}   {volume}%",
+		"format-muted": "󰖁",
+		"format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+		}
+	},
+	"temperature": {
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": [""]
+	},
+	"tray": {
+		"icon-size": 20,
+		"spacing": 5
+	},
+	"network": {
+		"tooltip": false,
+		"format-wifi": "󰤥  {essid} {ipaddr}",
+		"format-ethernet": " {ipaddr}"
+	},
+	"battery": {
+		"interval": 30,
+		"states": {
+			"warning": 15,
+			"critical": 15
+		},
+		"format": "{icon}  {capacity}%",
+		"format-charging": "󱐋  {capacity}%",
+		"format-icons": ["󰂎", "󰁻", "󰁾", "󰂁", "󰁹"],
+	},
+	"cpu": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+	"memory": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+	"sway/language": {
+	    	"format": "{short}{variant}",
+	},
+	"clock": {
+        	"format": "{:%a %b %d, %H:%M}",
+	        "tooltip": false
+    },
+}

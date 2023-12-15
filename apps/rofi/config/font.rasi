@@ -1,0 +1,14 @@
+* {
+    reg:        "Product Sans  13";
+    bold:       "Product Sans Bold 13";
+    ita:        "Product Sans Italic 13";
+    reg-big:    "Product Sans 15"; 
+    bold-big:   "Product Sans Bold 15";
+    ita-big:    "Product Sans Italic 15";
+    reg-sm:     "Product Sans 11";
+    bold-sm:    "Product Sans Bold 11";
+    ita-sm:     "Product Sans Italic 11";
+    reg-icon:   "Product Sans 25";
+    bold-icon:   "Product Sans Bold 25";
+    ita-icon:   "Product Sans Italic 25";
+}

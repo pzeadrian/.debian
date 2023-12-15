@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+prompt="-p Search:"
+
+# Output label string to rofi...
+search="$(dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" $prompt)"
+
+if [[ ! -z "$search" ]]; then
+
+    firefox --search "$search"
+
+fi
+
+exit 0
