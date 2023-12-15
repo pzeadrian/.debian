@@ -83,7 +83,7 @@ materia-gtk-theme materia-kde papirus-icon-theme qt5-style-kvantum
 network-manager-gnome btop neofetch mpv imv gnome-keyring grim
 slurp ranger exa bat inxi vainfo alsa-tools alsa-utils lxappearance
 brightnessctl x11-xserver-utils udisks2 swaylock swayidle
-fonts-noto-color-emoji fonts-open-sans gammastep libglib2.0-bin
+fonts-noto-color-emoji fonts-open-sans gammastep libglib2.0-bin dunst
 ```
 
 Enable some services.
