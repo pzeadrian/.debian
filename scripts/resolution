@@ -1,4 +1,6 @@
-if [  $1 == "1080"  ]; then
+#!/bin/bash
+
+if [[  $1 == "1080"  ]]; then
     sed -i 's/font-size: 12px/font-size: 15px/g' $HOME/.config/waybar/style.css
     sed -i 's/min-height: 12px/min-height: 18px/g' $HOME/.config/waybar/style.css
     sed -i 's/size: 12.0/size: 14.0/g' $HOME/.config/alacritty/alacritty.yml
@@ -10,7 +12,7 @@ if [  $1 == "1080"  ]; then
     # sed -i 's/22/25/g' $HOME/.config/rofi/config/font.rasi
     # sed -i 's/export QT_SCREEN_SCALE_FACTORS=1 #768p/export QT_SCREEN_SCALE_FACTORS=1.25 #1080p/g' $HOME/.xprofile
 
-elif [  $1 == "768" ]; then
+elif [[  $1 == "768" ]]; then
     sed -i 's/font-size: 15px/font-size: 12px/g' $HOME/.config/waybar/style.css
     sed -i 's/min-height: 18px/min-height: 12px/g' $HOME/.config/waybar/style.css
     sed -i 's/size: 14.0/size: 12.0/g' $HOME/.config/alacritty/alacritty.yml
