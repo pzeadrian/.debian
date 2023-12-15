@@ -23,8 +23,8 @@ if [ -d "$HOME/Documents/" ]; then
     # Rofi
     cp -rf $HOME/.config/rofi/ $HOME/Documents/.debian/apps/
     #
-    # Hyprland
-    cp -rf $HOME/.config/hypr/ $HOME/Documents/.debian/apps/
+    # Sway
+    cp -rf $HOME/.config/sway/ $HOME/Documents/.debian/apps/
     #
     # Waybar
     cp -rf $HOME/.config/waybar/ $HOME/Documents/.debian/apps/
@@ -63,8 +63,8 @@ elif [ -d "$HOME/Documentos/" ]; then
     # Rofi
     cp -rf $HOME/.config/rofi/ $HOME/Documentos/.debian/apps/
     #
-    # Hyprland
-    cp -rf $HOME/.config/hypr/ $HOME/Documentos/.debian/apps/
+    # Sway
+    cp -rf $HOME/.config/sway/ $HOME/Documentos/.debian/apps/
     #
     # Waybar
     cp -rf $HOME/.config/waybar/ $HOME/Documentos/.debian/apps/
