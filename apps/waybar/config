@@ -1,9 +1,9 @@
 {
 	"layer": "top",
-	"position": "top",
+	"position": "bottom",
 	"margin": "0 0 0 0",
-	"modules-left": [ "sway/workspaces", "custom/separator", "sway/window"],
-	"modules-center": ["clock"],
+	"modules-left": [ "clock", "custom/separator", "clock#date"],
+	"modules-center": ["sway/workspaces"],
 	"modules-right": ["tray", "custom/separator", "battery", "custom/separator", "backlight", "custom/separator", "pulseaudio", "custom/separator", "sway/language"],
 
 	"custom/separator": {
@@ -16,16 +16,14 @@
 	},
 	"sway/workspaces": {
 		"all-outputs": false,
+		"disable-scroll": true,
+		"disable-click": false,
 		"current-only": false,
 		"format": "{name}",
 		"format-icons": {
 			"active": "",
 			"default": ""
-		},
-		"persistent-workspaces": {
-        	"*": 5
-       	},
-		"disable-click": false
+		}
 	},
 	"backlight": {
 	    "device": "intel_backlight",
@@ -75,8 +73,12 @@
 	"sway/language": {
 	    	"format": "{short}{variant}",
 	},
-	"clock": {
-        	"format": "{:%a %b %d, %H:%M}",
+	"clock#date": {
+        	"format": "{:%A, %B %d, %Y}",
 	        "tooltip": false
     },
+	"clock": {
+        	"format": "{:It's %H:%M}",
+	        "tooltip": false
+	}
 }

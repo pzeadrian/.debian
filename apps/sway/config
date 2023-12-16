@@ -24,12 +24,17 @@
 
 ## Window Borders
 
-    font pango:monospace 0
+    font pango:Product Sans 10
     titlebar_border_thickness 1
-    titlebar_padding 1
-    default_border pixel 4
+    titlebar_padding 10 1 10 1
+    default_border normal
     smart_borders on
-    client.focused #a1b56c #a1b56c #a1b56c #a1b56c #a1b56c
+
+## Window Colors
+
+    client.unfocused #181818 #181818 #f8f8f8 #181818 #181818
+    client.focused #a1b56c #a1b56c #181818 #a1b56c #a1b56c
+    client.urgent #ab4642 #ab4642 #181818 #ab4642 #ab4642
 
 ## Variables
 
