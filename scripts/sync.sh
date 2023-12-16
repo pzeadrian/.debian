@@ -20,6 +20,9 @@ if [ -d "$HOME/Documents/" ]; then
     # MPV
     cp -rf $HOME/.config/mpv/ $HOME/Documents/.debian/apps/
     #
+    # SwayIMG
+    cp -rf $HOME/.config/swayimg/ $HOME/Documents/.debian/apps/
+    #
     # Rofi
     cp -rf $HOME/.config/rofi/ $HOME/Documents/.debian/apps/
     #
