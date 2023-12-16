@@ -21,14 +21,18 @@
         natural_scroll disabled
         dwt enabled
     }
+     mouse_warping container
 
 ## Window Borders
 
     font pango:Product Sans 10
-    titlebar_border_thickness 1
-    titlebar_padding 10 1 10 1
     default_border normal
     smart_borders on
+
+    titlebar_border_thickness 1
+    titlebar_padding 5 3 5 3
+    title_align left
+    for_window [title="."] title_format "%title"
 
 ## Window Colors
 

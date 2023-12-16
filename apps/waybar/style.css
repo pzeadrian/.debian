@@ -103,7 +103,7 @@ window#waybar.hidden {
 
 #workspaces button label {
 	font-weight: 900;
-	padding-top: 7px;
+	padding-top: 5px;
 	padding-bottom: 5px;
 	border-radius: 25px;
 }

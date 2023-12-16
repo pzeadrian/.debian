@@ -19,10 +19,9 @@
 		"disable-scroll": true,
 		"disable-click": false,
 		"current-only": false,
-		"format": "{name}",
+		"format": "{icon}",
 		"format-icons": {
-			"active": "",
-			"default": ""
+			"default": ""
 		}
 	},
 	"backlight": {
