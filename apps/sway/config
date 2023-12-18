@@ -25,20 +25,30 @@
 
 ## Window Borders
 
-    font pango:Product Sans 10
+    font pango:Product Sans 11
     default_border normal
     smart_borders on
 
     titlebar_border_thickness 1
-    titlebar_padding 5 3 5 3
-    title_align left
+    titlebar_padding 5 2 5 2
+    title_align center
     for_window [title="."] title_format "%title"
 
 ## Window Colors
 
-    client.unfocused #181818 #181818 #f8f8f8 #181818 #181818
-    client.focused #a1b56c #a1b56c #181818 #a1b56c #a1b56c
+    # Default
+    # client.unfocused #181818 #181818 #f8f8f8 #181818 #181818
+    client.unfocused #181818f2 #181818f2 #181818f2 #181818f2 #181818f2
+
+    # Default
+    # client.focused #a1b56c #a1b56c #181818 #a1b56c #a1b56c
+    client.focused #181818f2 #181818f2 #f8f8f8f2 #181818f2 #181818f2
+    client.focused_inactive #181818f2 #181818f2 #181818f2 #181818f2 #181818f2
+
+    # Default
     client.urgent #ab4642 #ab4642 #181818 #ab4642 #ab4642
+
+    client.background #181818f2
 
 ## Variables
 
