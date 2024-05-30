@@ -7,25 +7,25 @@
 	"modules-right": [ "sway/language", "tray", "battery", "backlight", "pulseaudio", "clock" ],
 
 	"custom/logo": {
-                "format": "",
-                "on-click": "~/.config/rofi/bin/powermenu"
-        },
-        "custom/finder": {
-                "format": "Finder",
-                "on-click": "~/.config/rofi/bin/launcher"
-        },
-        "custom/archivo": {
-                "format": "Archivo",
-                "on-click": "~/.config/rofi/bin/filesearch"
-        },
-        "custom/ejecutar": {
-                "format": "Ejecutar",
-                "on-click": "~/.config/rofi/bin/runner"
-        },
-        "custom/portapapeles": {
-                "format": "Portapapeles",
-                "on-click": "~/.config/rofi/bin/clipboard"
-        },
+			"format": "",
+			"on-click": "~/.config/rofi/bin/powermenu"
+	},
+	"custom/finder": {
+			"format": "Finder",
+			"on-click": "~/.config/rofi/bin/launcher"
+	},
+	"custom/archivo": {
+			"format": "Archivo",
+			"on-click": "~/.config/rofi/bin/filesearch"
+	},
+	"custom/ejecutar": {
+			"format": "Ejecutar",
+			"on-click": "~/.config/rofi/bin/runner"
+	},
+	"custom/portapapeles": {
+			"format": "Portapapeles",
+			"on-click": "~/.config/rofi/bin/clipboard"
+	},
 	"sway/window": {
     		"format": "{app_id}",
 	},
@@ -102,14 +102,10 @@
                 "format-en": "EN"
         },
 	},
-	"clock#date": {
-        	"format": "{:%A, %B %d, %Y}",
-	        "tooltip": false
-    },
     "clock": {
-                "timezone": "America/Guayaquil",
-                "locale": "es_EC.UTF-8",
+        "timezone": "America/Guayaquil",
+        "locale": "es_EC.UTF-8",
         "format": "{:L%a %d %b.  %H:%M}",
-        "tooltip": false,
+        "tooltip": true,
     }
 }
