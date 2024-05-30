@@ -75,7 +75,7 @@ nmcli device wifi connect "SSID" password "PASSWORD"
 ```
 Install some basic packages.
 ```sh
-sudo apt install sway xwayland waybar rofi alacritty firefox-esr
+sudo apt install sway xwayland waybar rofi alacritty firefox-esr wl-clipboard
 thunar thunar-archive-plugin pipewire pipewire-jack pipewire-audio
 pavucontrol blueman gvfs gvfs-backends gvfs-fuse libsmbclient
 ffmpegthumbnailer tumbler xdg-desktop-portal-gtk policykit-1-gnome
