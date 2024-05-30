@@ -1,14 +1,14 @@
 * {
-    reg:        "Inter  11";
-    bold:       "Inter Bold 11";
-    ita:        "Inter Italic 11";
-    reg-big:    "Inter 15"; 
-    bold-big:   "Inter Bold 15";
-    ita-big:    "Inter Italic 15";
-    reg-sm:     "Inter 9";
-    bold-sm:    "Inter Bold 9";
-    ita-sm:     "Inter Italic 9";
-    reg-icon:   "Inter 25";
-    bold-icon:   "Inter Bold 25";
-    ita-icon:   "Inter Italic 25";
+    reg:        "Manrope  11";
+    bold:       "Manrope Bold 11";
+    ita:        "Manrope Italic 11";
+    reg-big:    "Manrope 15"; 
+    bold-big:   "Manrope Bold 15";
+    ita-big:    "Manrope Italic 15";
+    reg-sm:     "Manrope 9";
+    bold-sm:    "Manrope Bold 9";
+    ita-sm:     "Manrope Italic 9";
+    reg-icon:   "Manrope 25";
+    bold-icon:   "Manrope Bold 25";
+    ita-icon:   "Manrope Italic 25";
 }

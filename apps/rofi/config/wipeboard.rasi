@@ -18,7 +18,7 @@ configuration {
 }
 
 window {
-    width:                          303px;
+    width:                          295px;
     x-offset:                       0;
     y-offset:                       10;
 }
