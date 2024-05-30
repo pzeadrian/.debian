@@ -181,18 +181,18 @@ window#waybar.hidden {
 #workspaces button.empty label {
 	margin: 0px 13px;
 	color: #181818;
-	background: #a1b56c;
+	background: #f8f8f8;
 }
 
 #workspaces button.urgent {
 	color: #101010;
-	background: #ab4642;
+	background: transparent;
 }
 
 #workspaces button.urgent label {
 	margin: 0px 13px;
 	color: #181818;
-	background: #a1b56c;
+	background: #ab4642;
 }
 
 #submap {
