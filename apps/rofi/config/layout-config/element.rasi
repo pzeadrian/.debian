@@ -1,0 +1,38 @@
+@import "../font.rasi"
+@import "../colors.rasi"
+
+element {
+    border-radius:                  0px;
+    text-color:                     @FG;
+    background-color:               transparent;
+    margin:                         0px 10px;
+    padding:                        7px 10px;
+}
+
+element-icon {
+    background-color: 	            inherit;
+    text-color:       		        inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           25px;
+    border:                         0px;
+}
+
+element-text {
+    background-color: 		        inherit;
+    text-color:       		        inherit;
+    expand:                         true;
+    horizontal-align:               0;
+    vertical-align:                 0.5;
+    margin:                         5px 5px 5px 5px;
+    font:                           @reg;
+}
+
+element selected {
+    background-color:  @BGA;
+    text-color: @FG;
+}
+
+element-text selected {
+    background-color:               transparent;
+}

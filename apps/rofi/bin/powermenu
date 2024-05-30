@@ -28,7 +28,6 @@ else
 		reboot="󰜉"
 		suspend="󰤄"
 		logout="󰍃"
-		lock=""
 
 
 	else
@@ -42,18 +41,17 @@ else
 		reboot="󰜉"
 		suspend="󰤄"
 		logout="󰍃"
-		lock=""
 	fi
 	ddir="$HOME/.config/rofi/config"
 fi
 
 # Ask for confirmation
-yes="Yes"
+yes="Sí"
 no="No"
 yesno="$yes\n$no"
 function rdialog () {
 
-	chosen="$(echo -e "$yesno" |  rofi -theme $HOME/.config/rofi/config/confirm.rasi -dmenu -p "Are you sure?" -selected-row 0)"
+	chosen="$(echo -e "$yesno" |  rofi -theme $HOME/.config/rofi/config/confirm.rasi -dmenu -p "¿Estás seguro?" -selected-row 0)"
 	case $chosen in
     $yes)
 		return 1	
@@ -71,7 +69,7 @@ show_msg() {
 }
 
 # Variable passed to rofi
-options="$suspend\n$logout\n$reboot\n$shutdown\n$lock"
+options="$suspend\n$logout\n$reboot\n$shutdown"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Power Menu" -dmenu -selected-row 0)"
 case $chosen in
@@ -103,6 +101,7 @@ case $chosen in
 		if [[ $ans == 1 ]]; then
 			mpc -q pause
 			amixer set Master mute
+			swaylock -f
 			sh $HOME/.local/bin/lock
 			systemctl suspend
 		elif [[ $ans == 0 ]]; then
@@ -116,19 +115,6 @@ case $chosen in
 		ans=$?
 		if [[ $ans == 1 ]]; then
 			pkill -SIGKILL -u $USER
-		elif [[ $ans == 0 ]]; then
-			exit
-        else
-			show_msg
-        fi
-        ;;
-	$lock)
-		rdialog
-		ans=$?
-		if [[ $ans == 1 ]]; then
-			swayidle -w timeout 1 'swaylock -f' timeout 300 'hyprctl dispatch dpms off' \
-			resume 'hyprctl dispatch dpms on && pkill swayidle && swayidle -w timeout 300 "swaylock -f" timeout 600 "hyprctl dispatch dpms off" resume "hyprctl dispatch dpms on" before-sleep "swaylock -f"' \
-			before-sleep 'swaylock -f'
 		elif [[ $ans == 0 ]]; then
 			exit
         else

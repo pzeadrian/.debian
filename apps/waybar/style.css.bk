@@ -9,12 +9,12 @@
  */
 
 /* PALETTE */
-/*     'background':   '#101010', */
+/*     'background':   '#181818', */
 /*     'background1':  '#2e2e2e', */
 /*     'foreground':   '#f8f8f8', */
 /*     'foreground1':  '#b8b8b8', */
 
-/*     'black':        '#101010', */
+/*     'black':        '#181818', */
 /*     'red':          '#ab4642', */
 /*     'green':        '#a1b56c', */
 /*     'yellow':       '#d7ba7d', */
@@ -27,8 +27,8 @@
 * {
 	border: none;
 	border-radius: 0px;
-	font-family: Manrope, Inconsolata Nerd Font;
-	font-size: 14px;
+	font-family: Product Sans, Mononoki Nerd Font;
+	font-size: 15px;
 	min-height: 16px;
 }
 
@@ -63,14 +63,30 @@ window#waybar.floating {
 
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 window#waybar.hidden {
 	opacity: 1;
-	padding: 0px;
+}
+
+#window {
+	margin: 5px 5px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	border-radius: 0px;
+
+	transition: none;
+	color: #f8f8f8;
+	/* background: #282828; */
+	background: transparent;
+
+	font-family: sans-serif, Product Sans, Mononoki Nerd Font;	
+}
+
+#waybar.empty #window {
+	background: none;
 }
 
 #custom-logo {
@@ -98,28 +114,6 @@ window#waybar.hidden {
 	font-size: 14px;
 }
 
-/* #waybar.empty #custom-finder { */
-/* 	background: transparent; */
-/* 	margin: 0px 10px; */
-/* 	padding: 0px; */
-/* 	transition: none; */
-/* 	color: #f8f8f8; */
-
-/* 	font-size: 14px; */
-/* 	font-weight: bold; */
-/* } */
-
-/* #window { */
-/* 	margin: 0px 10px; */
-/* 	padding: 0px; */
-/* 	transition: none; */
-/* 	color: #f8f8f8; */
-
-/* 	font-family: sans-serif, Inter; */
-/* 	font-weight: bold; */
-	
-/* } */
-
 #window {
 	background: none;
 	font-size: 0px;
@@ -137,10 +131,16 @@ window#waybar.hidden {
 #workspaces {
 	
 	margin: 3px 6px;
+
 	padding-top: 1px;
 	padding-bottom: 1px;	
 	padding-left: 5px;
 	padding-right: 5px;
+	
+	border-radius: 0px;
+
+	/* background: #282828; */
+	background: transparent;
 	transition: none;
 }
 
@@ -148,22 +148,29 @@ window#waybar.hidden {
 	margin: 3px -10px;
 
 	padding: 0px 0px;
+	/* padding-left: 5px; */
+	/* padding-right: 5px; */
+
 	border-radius: 0px;
 
 	transition: none;
 	color: #f8f8f8;
+	/* background: #363636; */
 	background: transparent;
+	font-family: Roboto;
 }
 
 #workspaces button label {
 	font-weight: 900;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	border-radius: 2px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 0px;
 }
 
 #workspaces button.focused {
-	color: #101010;
+	margin: 3px -10px;
+	color: #a1b56c;
+	/* background: #a1b56c; */
 	background: transparent;
 }
 
@@ -171,83 +178,107 @@ window#waybar.hidden {
 	margin: 0px 10px;
 	color: #181818;
 	background: #a1b56c;
+	/* background: transparent; */
 }
 
-#workspaces button.empty {
-	color: #f8f8f8;
-	background: transparent;
-}
-
-#workspaces button.empty label {
-	margin: 0px 10px;
-	color: #181818;
-	background: #a1b56c;
-}
-
-#workspaces button.urgent {
-	color: #101010;
-	background: #ab4642;
-}
-
-#workspaces button.urgent label {
-	margin: 0px 10px;
-	color: #181818;
-	background: #a1b56c;
-}
-
-#submap {
-	margin: 0px 10px;
-	padding:  0px 10px;
-	transition: none;
-	color: rgba(24,24,24, 1);
-	background: #a1b56c;
-
-	font-weight: bold;
-}
 
 #tray {
 	
-	margin: 0px 10px;
-	padding: 0px;
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;	
+	padding-right: 10px;
+
+	border-radius: 0px;
+
+	/* background: #282828; */
+	background: transparent;
 }
 
 #network {
 	
-	margin: 0px 10px;
-	padding: 0px;
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 0px;
+
 	transition: none;
 	color: #f8f8f8;
+	/* background: #363636; */
+	background: transparent;
 }
 
 #backlight {
 	
-	margin: 0px 10px;
-	padding: 0px;
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 0px;
+
 	transition: none;
 	color: #f8f8f8;
+	/* background: #282828; */
+	background: transparent;
 }
 
 #pulseaudio {
 	
-	margin: 0px 10px;
-	padding: 0px;
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 0px;
+
 	transition: none;
 	color: #f8f8f8;
+	/* background: #282828; */
+	background: transparent;
 }
 
 #temperature {
 	
-	margin: 0px 10px;
-	padding: 0px;
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 0px;
+
 	transition: none;
 	color: #f8f8f8;
+	/* background: #282828; */
+	background: transparent;
 }
 
 #battery {
 	
-	margin: 0px 10px;
-	padding: 0px;
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 0px;
+
 	color: #f8f8f8;
+	/* background: #282828; */
+	background: transparent;
 	transition: none;
 }
 
@@ -259,32 +290,69 @@ window#waybar.hidden {
 
 #cpu {
 	
-	margin: 0px 10px;
-	padding: 0px;
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 0px;
+
 	transition: none;
 	color: #f8f8f8;
+	/* background: #282828; */
+	background: transparent;
 }
 
 #memory {
 	
-	margin: 0px 10px;
-	padding: 0px;
+	margin: 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-radius: 0px;
+	
 	transition: none;
 	color: #f8f8f8;
+	/* background: #282828; */
+	background: transparent;
 }
 
 #language {
 	
-	margin: 0px 10px;
-	padding: 0px;
+	margin: 5px 5px 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 10px; /*can't be 10 because sometimes big languages name not shown*/
+	padding-right: 10px; /*can't be 10 because sometimes big languages name not shown*/
+
+	border-radius: 0px;
+	
 	transition: none;
 	color: #f8f8f8;
+	/* background: #282828; */
+	background: transparent;
 }
 
 #clock {
 	
-	margin: 0px 15px 0px 10px;
-	padding: 0px;
+	margin: 5px 4px 5px 2px;
+
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	border-radius: 0px;
+
 	transition: none;
 	color: #f8f8f8;
+	/* background: #363636; */
+	/* background: #282828; */
+	background: transparent;
 }

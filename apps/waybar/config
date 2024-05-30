@@ -1,16 +1,31 @@
 {
 	"layer": "top",
-	"position": "bottom",
+	"position": "top",
 	"margin": "0 0 0 0",
-	"modules-left": [ "clock", "custom/separator", "clock#date"],
+	"modules-left": [ "custom/logo", "custom/finder", "sway/window", "custom/archivo", "custom/ejecutar", "custom/portapapeles" ],
 	"modules-center": ["sway/workspaces"],
-	"modules-right": ["tray", "custom/separator", "battery", "custom/separator", "backlight", "custom/separator", "pulseaudio", "custom/separator", "sway/language"],
+	"modules-right": [ "sway/language", "tray", "battery", "backlight", "pulseaudio", "clock" ],
 
-	"custom/separator": {
-		"format": "|",
-		"interval": "once",
-		"tooltip": false
-	},
+	"custom/logo": {
+                "format": "",
+                "on-click": "~/.config/rofi/bin/powermenu"
+        },
+        "custom/finder": {
+                "format": "Finder",
+                "on-click": "~/.config/rofi/bin/launcher"
+        },
+        "custom/archivo": {
+                "format": "Archivo",
+                "on-click": "~/.config/rofi/bin/filesearch"
+        },
+        "custom/ejecutar": {
+                "format": "Ejecutar",
+                "on-click": "~/.config/rofi/bin/runner"
+        },
+        "custom/portapapeles": {
+                "format": "Portapapeles",
+                "on-click": "~/.config/rofi/bin/clipboard"
+        },
 	"sway/window": {
     		"format": "{app_id}",
 	},
@@ -19,7 +34,7 @@
 		"disable-scroll": true,
 		"disable-click": false,
 		"current-only": false,
-		"format": "{icon}",
+		"format": "{value}",
 		"format-icons": {
 			"default": ""
 		}
@@ -46,11 +61,23 @@
 		"icon-size": 20,
 		"spacing": 5
 	},
+	//"network": {
+	//	"tooltip": false,
+	//	"format-wifi": "󰤥  {essid} {ipaddr}",
+	//	"format-ethernet": " {ipaddr}"
+	//},
 	"network": {
-		"tooltip": false,
-		"format-wifi": "󰤥  {essid} {ipaddr}",
-		"format-ethernet": " {ipaddr}"
-	},
+                "on-click": "~/.config/rofi/bin/wifi",
+                "format": "{ifname}",
+                "format-wifi": "󰤥 ",
+                "format-ethernet": " ",
+                "format-disconnected": "", //An empty format will hide the module.
+                "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+                "tooltip-format-wifi": "{essid} - ({ipaddr}) - ({signalStrength}%)",
+                "tooltip-format-ethernet": "{ifname} - {ipaddr}/{cidr}",
+                "tooltip-format-disconnected": "Sin Conexión a Internet",
+                "max-length": 30
+        },
 	"battery": {
 		"interval": 30,
 		"states": {
@@ -70,14 +97,19 @@
 		"format": " {}%"
 	},
 	"sway/language": {
-	    	"format": "{short}{variant}",
+		"format": "{}",
+                "format-es": "ES",
+                "format-en": "EN"
+        },
 	},
 	"clock#date": {
         	"format": "{:%A, %B %d, %Y}",
 	        "tooltip": false
     },
-	"clock": {
-        	"format": "{:It's %H:%M}",
-	        "tooltip": false
-	}
+    "clock": {
+                "timezone": "America/Guayaquil",
+                "locale": "es_EC.UTF-8",
+        "format": "{:L%a %d %b.  %H:%M}",
+        "tooltip": false,
+    }
 }

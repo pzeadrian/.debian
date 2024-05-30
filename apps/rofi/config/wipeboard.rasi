@@ -11,29 +11,22 @@ configuration {
 
 @import "font.rasi"
 @import "colors.rasi"
+@import "layout-config/window.rasi"
 
 * {
     font:                           @reg;
 }
 
 window {
-    transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border:                         0px;
-    border-color:                   @BDR;
-    border-radius:                  1px;
-    width:                          363px;
-    anchor:                         center;
+    width:                          303px;
     x-offset:                       0;
-    y-offset:                       0;
-    dpi:                            0;
+    y-offset:                       10;
 }
 
 prompt {
     background-color:               @ON;
     text-color:                     @BG;
-    border-radius:                  1px;
+    border-radius:                  0px;
     padding:                        5px 15px;
     vertical-align:                 0.5;
     margin:                         0 10px 0 0;
@@ -52,33 +45,33 @@ textbox-prompt-colon {
     vertical-align:                 0.5;
     border:                         0px;
     border-color:                   @BDR;
-    border-radius:                  1px;
+    border-radius:                  0px;
 }
 
 listview {
-    background-color:               @BG;
     columns:                        1;
     lines:							2;
     spacing:                        5px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         horizontal;
+    background-color:               transparent;
 }
 
 mainbox {
     background-color:               @BG;
     children:                       [ prompt, listview ];
     spacing:                       	0px;
-    padding:                        10px;
+    padding:                        7px;
     orientation:                    horizontal;
 }
 
 element {
-    background-color:               @BG;
     text-color:                     @FG;
     orientation:                    horizontal;
-    border-radius:                  1px;
-    padding:                        5px 10px;
+    border-radius:                  0px;
+    padding:                        10px 10px;
+    background-color:               transparent;
 }
 
 element-icon {
@@ -102,8 +95,12 @@ element selected {
     background-color:               @BGA;
     text-color:                     @SEL;
     border:                  		0px 0px 0px 0px;
-    border-radius:                  1px;
+    border-radius:                  0px;
     border-color:                  	@BDR;
+}
+
+element-text selected {
+    background-color:               transparent;
 }
 
 element.active,

@@ -32,6 +32,8 @@ local user_opts = {
     title = "${media-title}",   -- string compatible with property-expansion
                                 -- to be shown as OSC title
     timetotal = true,           -- display total time instead of remaining time?
+    remaining_playtime = true,  -- display the remaining time in playtime or video-time mode
+                                -- playtime takes speed into account, whereas video-time doesn't
     timems = false,             -- display timecodes with milliseconds?
     visibility = "auto",        -- only used at init to set visibility_mode(...)
     boxvideo = false,           -- apply osc_param.video_margins to video
@@ -190,7 +192,7 @@ function kill_animation()
     state.anitype =  nil
 end
 
-function set_osd(res_x, res_y, text)
+function set_osd(res_x, res_y, text, z)
     if state.osd.res_x == res_x and
        state.osd.res_y == res_y and
        state.osd.data == text then
@@ -199,7 +201,7 @@ function set_osd(res_x, res_y, text)
     state.osd.res_x = res_x
     state.osd.res_y = res_y
     state.osd.data = text
-    state.osd.z = 1000
+    state.osd.z = z
     state.osd:update()
 end
 
@@ -505,7 +507,7 @@ local elements = {}
 
 function prepare_elements()
 
-    -- remove elements without layout or invisble
+    -- remove elements without layout or invisible
     local elements2 = {}
     for n, element in pairs(elements) do
         if not (element.layout == nil) and (element.visible) then
@@ -783,7 +785,7 @@ function render_elements(master_ass)
                             elseif (sliderpos > (s_max - 3)) then
                                 an = an + 1
                             end
-                        elseif (sliderpos > (s_max-s_min)/2) then
+                        elseif (sliderpos > (s_max+s_min)/2) then
                             an = an + 1
                             tx = tx - 5
                         else
@@ -1817,13 +1819,15 @@ function osc_init()
         end
         if (state.rightTC_trem) then
             local minus = user_opts.unicodeminus and UNICODE_MINUS or "-"
+            local property = user_opts.remaining_playtime and "playtime-remaining"
+                                                           or "time-remaining"
             if state.tc_ms then
                 return (mp.get_property_osd("playback-time/full") .. " / "
-                    .. minus .. mp.get_property_osd("playtime-remaining/full")
+                    .. minus .. mp.get_property_osd(property .. "/full")
                     .. chapter_title)
             else
                 return (mp.get_property_osd("playback-time") .. " / "
-                    .. minus .. mp.get_property_osd("playtime-remaining")
+                    .. minus .. mp.get_property_osd(property)
                     .. chapter_title)
             end
         else
@@ -1903,15 +1907,12 @@ function update_margins()
         reset_margins()
     end
 
-    utils.shared_script_property_set("osc-margins",
-        string.format("%f,%f,%f,%f", margins.l, margins.r, margins.t, margins.b))
-    -- mp.set_property_native("user-data/osc/margins", margins)
+    mp.set_property_native("user-data/osc/margins", margins)
 end
 
 function shutdown()
     reset_margins()
-    utils.shared_script_property_set("osc-margins", nil)
-    -- mp.del_property("user-data/osc")
+    mp.del_property("user-data/osc")
 end
 
 --
@@ -2045,7 +2046,7 @@ function render()
 
     -- init management
     if state.active_element then
-        -- mouse is held down on some element - keep ticking and igore initReq
+        -- mouse is held down on some element - keep ticking and ignore initReq
         -- till it's released, or else the mouse-up (click) will misbehave or
         -- get ignored. that's because osc_init() recreates the osc elements,
         -- but mouse handling depends on the elements staying unmodified
@@ -2190,7 +2191,7 @@ function render()
 
     -- submit
     set_osd(osc_param.playresy * osc_param.display_aspect,
-            osc_param.playresy, ass.text)
+            osc_param.playresy, ass.text, 1000)
 end
 
 --
@@ -2313,7 +2314,7 @@ function show_logo()
     ass:pos(logo_x, logo_y+110)
     ass:an(8)
     ass:append(texts.welcome)
-    set_osd(osd_w, osd_h, ass.text)
+    set_osd(osd_w, osd_h, ass.text, -1000)
 end
 
 -- called by mpv on every frame
@@ -2563,8 +2564,7 @@ function visibility_mode(mode, no_osd)
     end
 
     user_opts.visibility = mode
-    utils.shared_script_property_set("osc-visibility", mode)
-    -- mp.set_property_native("user-data/osc/visibility", mode)
+    mp.set_property_native("user-data/osc/visibility", mode)
 
     if not no_osd and tonumber(mp.get_property("osd-level")) >= 1 then
         mp.osd_message("OSC visibility: " .. mode)
@@ -2596,8 +2596,7 @@ function idlescreen_visibility(mode, no_osd)
         user_opts.idlescreen = false
     end
 
-    utils.shared_script_property_set("osc-idlescreen", mode)
-    -- mp.set_property_native("user-data/osc/idlescreen", user_opts.idlescreen)
+    mp.set_property_native("user-data/osc/idlescreen", user_opts.idlescreen)
 
     if not no_osd and tonumber(mp.get_property("osd-level")) >= 1 then
         mp.osd_message("OSC logo visibility: " .. tostring(mode))

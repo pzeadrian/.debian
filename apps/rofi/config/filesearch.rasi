@@ -20,20 +20,11 @@ configuration {
 }
 
 window {
-    width:                          500px;
-}
-
-inputbar {
-    children:                       [textbox-prompt-colon,entry];
-}
-
-textbox-prompt-colon {
-    content:                        "Ejecutar";
+    width:                          50%;
 }
 
 listview {
-    columns:                        2;
-    lines:							5;
+    lines:                          7;
 }
 
 element-icon {

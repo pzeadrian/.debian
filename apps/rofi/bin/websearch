@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-prompt="-p Search:"
+prompt="Buscar en Internet"
 
 # Output label string to rofi...
-search="$(dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" $prompt)"
+search="$(dmenu -theme "$HOME/.config/rofi/config/singleline.rasi" -p "$prompt")"
 
 if [[ ! -z "$search" ]]; then
 

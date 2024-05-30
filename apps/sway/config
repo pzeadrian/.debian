@@ -13,6 +13,7 @@
     input "type:keyboard" {
         xkb_layout us,latam
         xkb_options grp:win_space_toggle
+        xkb_numlock enabled
     }
 
     # Touchpad Settings
@@ -25,30 +26,30 @@
 
 ## Window Borders
 
-    font pango:Product Sans 11
-    default_border normal
+    font pango:Product Sans 0
+    default_border pixel 2
     smart_borders on
 
-    titlebar_border_thickness 1
-    titlebar_padding 5 2 5 2
-    title_align center
+    titlebar_border_thickness 0
+    titlebar_padding 0
+    title_align left
     for_window [title="."] title_format "%title"
 
 ## Window Colors
 
     # Default
-    # client.unfocused #181818 #181818 #f8f8f8 #181818 #181818
-    client.unfocused #181818f2 #181818f2 #181818f2 #181818f2 #181818f2
+    client.unfocused #383838 #383838 #f8f8f8 #383838 #383838
+    # client.unfocused #181818f2 #181818f2 #181818f2 #181818f2 #181818f2
 
     # Default
-    # client.focused #a1b56c #a1b56c #181818 #a1b56c #a1b56c
-    client.focused #181818f2 #181818f2 #f8f8f8f2 #181818f2 #181818f2
-    client.focused_inactive #181818f2 #181818f2 #181818f2 #181818f2 #181818f2
+    client.focused #a1b56c #a1b56c #181818 #a1b56c #a1b56c
+    # client.focused #181818f2 #181818f2 #f8f8f8f2 #181818f2 #181818f2
+    # client.focused_inactive #181818f2 #181818f2 #181818f2 #181818f2 #181818f2
 
     # Default
     client.urgent #ab4642 #ab4642 #181818 #ab4642 #ab4642
 
-    client.background #181818f2
+    client.background #181818
 
 ## Variables
 
@@ -80,10 +81,10 @@
 ## Idle configuration
 
     # Example configuration:
-    # exec swayidle -w \
-    #          timeout 300 'swaylock -f -c 000000' \
-    #          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-    #          before-sleep 'swaylock -f -c 000000'
+    exec swayidle -w \
+             timeout 300 'swaylock -f' \
+             timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+             before-sleep 'swaylock -f'
     #
     # This will lock your screen after 300 seconds of inactivity, then turn off
     # your displays after another 300 seconds, and turn your screens back on when
@@ -101,6 +102,10 @@
     exec xhost si:localuser:root
     exec /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
+## Clipboard Stuff
+    exec wl-clipboard-history -t
+    exec wl-paste --watch cliphist store
+    exec rm "$HOME/.cache/cliphist/db"
 
 #### KEY BINDINGS
 
@@ -113,6 +118,7 @@
     bindsym $mod+q kill
 
     # Rofi Utilities
+    bindsym $mod+a exec "rofi -show rofi-sound -modi "rofi-sound:$HOME/.config/rofi/bin/audio-op" -theme $HOME/.config/rofi/config/standardtheme.rasi"
     bindsym $mod+r exec ~/.config/rofi/bin/runner
     bindsym $mod+o exec ~/.config/rofi/bin/launcher
     bindsym $mod+s exec ~/.config/rofi/bin/screenshot
@@ -211,8 +217,8 @@
     bindsym $mod+v splitv
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
-    bindsym $mod+Shift+a focus child
+    bindsym $mod+x focus parent
+    bindsym $mod+Shift+x focus child
 
     # Switch the current container between different layout styles
     bindsym $mod+w layout tabbed
@@ -241,10 +247,10 @@
 
 ## Resizing containers:
 
-    bindsym $mod+Control+Left resize shrink width 10px
-    bindsym $mod+Control+Down resize grow height 10px
-    bindsym $mod+Control+Up resize shrink height 10px
-    bindsym $mod+Control+Right resize grow width 10px
+    bindsym $mod+Control+Left resize shrink width 25px
+    bindsym $mod+Control+Down resize grow height 25px
+    bindsym $mod+Control+Up resize shrink height 25px
+    bindsym $mod+Control+Right resize grow width 25px
 
 ## Status Bar:
 

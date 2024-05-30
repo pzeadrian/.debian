@@ -9,6 +9,7 @@ configuration {
 
 @import "font.rasi"
 @import "colors.rasi"
+@import "layout-config/window.rasi"
 
 * {
     font:                           @reg;
@@ -16,21 +17,13 @@ configuration {
 
 
 window {
-    transparency:                   "real";
-    background-color:               @BG;
-    text-color:                     @FG;
-    border:                  	    0px;
-    border-color:                   @BDR;
-    border-radius:                  1px;
-    width:                          543px;
-    x-offset:                       0;
-    y-offset:                       0;
+    width:                          369px;
 }
 
 prompt {
     background-color:               @ON;
     text-color:                     @BG;
-    border-radius:                  1px;
+    border-radius:                  15px;
     padding:                        5px 15px;
     vertical-align:                 0.5;
     margin:                         0 10px 0 0;
@@ -49,7 +42,7 @@ textbox-prompt-colon {
     vertical-align:                 0.5;
     border:                         0px;
     border-color:                   @BDR;
-    border-radius:                  1px;
+    border-radius:                  15px;
 }
 
 inputbar {
@@ -63,29 +56,34 @@ case-indicator {
 }
 
 listview {
-    background-color:               @BG;
     columns:                        1;
-    lines:			                5;
+    lines:			                4;
     spacing:                        20px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         horizontal;
+    background-color:               transparent;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
 }
 
 mainbox {
     background-color:               @BG;
-    children:                       [ prompt, listview ];
+    children:                       [ listview ];
     spacing:                        0px;
-    padding:                        10px;
+    padding:                        8px;
     orientation:                    horizontal;
+    align-items:                    center;
 }
 
 element {
-    background-color:               @BG;
     text-color:                     @FG;
     orientation:                    horizontal;
-    border-radius:                  1px;
-    padding:                        5px 10px;
+    border-radius:                  15px;
+    padding:                        5px 15px;
+    background-color:               transparent;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
 }
 
 element-icon {
@@ -104,16 +102,22 @@ element-text {
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
+    text-align:                     center;
+    align-items:                    center;
     padding:                        5px;
     margin:                         5px 5px 5px 5px;
 }
 
 element selected {
-    background-color:               @BGA;
-    text-color:                     @SEL;
+    background-color:               @ON;
+    text-color:                     @NBG;
     border:                  	    0px 0px 0px 0px;
-    border-radius:                  1px;
+    border-radius:                  0px;
     border-color:                   @BDR;
+}
+
+element-text selected {
+    background-color:               transparent;
 }
 
 element.active,

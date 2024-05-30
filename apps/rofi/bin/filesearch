@@ -1,44 +1,14 @@
-#!/usr/bin/env bash
-
-# search root
-root_path=$HOME
-
-# scripts path
-scripts_path="$HOME/.local/bin"
-
-# dmenu theming
-# . "$scripts_path/dmenu-theming"
-
-prompt="-p Folder"
-
-file_path="$(find $root_path -maxdepth 5 -type d \( ! -regex '.*/\..*' \) | \
-             sed 's|^'$root_path/'||' | sort | \
-             dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" -i $prompt)"
-
-if [[ ! -z $file_path ]]; then
-
-    if [[ "$file_path" == "$root_path" ]]; then
-        search_path=$root_path
-    else
-        search_path="$root_path/$file_path"
-    fi
-
-    total="$(find "$search_path" -maxdepth 1 -type f | wc -l)"
-    
-    if [[ $total -eq 0 ]]; then
-        prompt="No files here!"
-    else
-        prompt="File:"
-    fi
-
-    file_name="$(find "$search_path" -maxdepth 1 -type f | \
-                 awk -F'/' '{print $NF}' | \
-                 dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" -i -p "$prompt")"
-
-    if [[ ! -z $file_name ]]; then
-        alacritty --working-directory "$search_path"
-    fi
-
-fi
-
-exit 0
+#!/bin/bash
+# dmenu_findfile.sh for dmenu.
+# Find every file in your $HOME
+# author: Diego Rucci (dragonauta) <dragonauta.x@gmail.com>
+# It shows dmenu with a width of 600px, 30 lines of text on top of screen.
+# Idea taken from Chrysostomus
+# https://github.com/Chrysostomus/bspwm-scripts/blob/master/bin/finder
+# Requires: dmenu, xdg-utils
+# 
+prompt="Buscar Archivo"
+#
+# Regex \( ! -regex '.*/\..*' \) not show dot files.
+# -type f show only files (not folders)
+find ~/ \( ! -regex '.*/\..*' \) -type f | sed 's/ /\\ /g' | sort -f | dmenu -theme "$HOME/.config/rofi/config/filesearch.rasi" -i -p "$prompt" | xargs xdg-open

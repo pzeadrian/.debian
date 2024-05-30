@@ -1,0 +1,9 @@
+@import "../font.rasi"
+@import "../colors.rasi"
+
+entry {
+    padding:                        5px 10px;
+    text-color:                     @FG;
+    background-color:               transparent;
+    font:                           @reg-big;
+}

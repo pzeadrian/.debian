@@ -1,1 +1,1 @@
-cliphist list | rofi -dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" -i -p "Select item to delete" | cliphist delete
+cliphist list | rofi -dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" -i -p "Eliminar del portapapeles" | cliphist delete

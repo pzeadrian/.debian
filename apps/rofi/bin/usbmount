@@ -16,14 +16,14 @@ usbcheck(){ \
 }
 
 mountusb(){ \
-    chosen=$(echo "$usbdrives" | rofi -dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" -i -p "Mount drive" | awk '{print $1}')
-    mountpoint=$(udisksctl mount --no-user-interaction -b "$chosen" 2>/dev/null) && notify-send "USB mounting" "$chosen mounted to $mountpoint" && exit 0
+    chosen=$(echo "$usbdrives" | rofi -dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" -i -p "Montar disco" | awk '{print $1}')
+    mountpoint=$(udisksctl mount --no-user-interaction -b "$chosen" 2>/dev/null) && notify-send ";Montando USB" "$chosen montado en $mountpoint" && exit 0
 
 }
 
 umountusb(){ \
-    chosen=$(echo "$mounteddrives" | rofi -dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" -i -p "Unmount drive" | awk '{print $1}')
-    mountpoint=$(udisksctl unmount --no-user-interaction -b "$chosen" 2>/dev/null) && notify-send "USB unmounting" "$chosen unmounted" && exit 0
+    chosen=$(echo "$mounteddrives" | rofi -dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" -i -p "Desmontar disco" | awk '{print $1}')
+    mountpoint=$(udisksctl unmount --no-user-interaction -b "$chosen" 2>/dev/null) && notify-send "Desmontando USB" "$chosen desmontado" && exit 0
     udisksctl unmount --no-user-interaction -b "$chosen"
 }
 
@@ -37,7 +37,7 @@ usbdrives="$(lsblk -rnpo name,size,mountpoint,fstype | grep -v 'sda' | awk 'NF==
 mounteddrives="$(lsblk -rnpo name,size,mountpoint,fstype | grep -v 'sda' | awk 'NF==4 {print $1, $2, $3, $4}')"
 
 menu(){ \
-	epilogimenu=$(echo -e "Mount\nUmount\nUmountAll" | rofi -dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" -i -p "Disk" | awk '{print $1}')
+	epilogimenu=$(echo -e "Montar\nDesmontar\nDesmontar Todos" | rofi -dmenu -theme "$HOME/.config/rofi/config/standardtheme.rasi" -i -p "Disk" | awk '{print $1}')
 }
 
 menu

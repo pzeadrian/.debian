@@ -11,10 +11,10 @@ if [[ "$layout" == "TRUE" ]]; then
 	dual="󰊲 "
 	monitoronly="󱒃 "
 else
-	pconly="󰍹   PC screen only"
-	project="󰍺   Duplicate"
-	dual="󰊲   Extend"
-	monitoronly="󱒃   Second screen only"
+	pconly="󰍹   Solo Pantalla del PC"
+	project="󰍺   Duplicar Pantalla"
+	dual="󰊲   Extender Pantalla"
+	monitoronly="󱒃   Solo Segunda Pantalla"
 fi
 
 # change xrandr settings
@@ -37,7 +37,7 @@ duplicate () {
 # Variable passed to rofi
 options="$pconly\n$project\n$dual\n$monitoronly"
 
-chosen="$(echo -e "$options" |  $rofi_command -p 'Project screen' -dmenu -selected-row 0)"
+chosen="$(echo -e "$options" |  $rofi_command -p 'Proyectar Pantalla' -dmenu -selected-row 0)"
 case $chosen in
     $pconly)
 		principal_screen

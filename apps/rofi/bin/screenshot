@@ -3,7 +3,7 @@ rofi_command="rofi -theme $HOME/.config/rofi/config/screenshot.rasi"
 
 time=`date +%Y-%m-%d-%I-%M-%S`
 geometry=`xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
-dir="$HOME/Pictures/Screenshots"
+dir="$HOME/Imágenes/Capturas"
 file="Screenshot_${time}_${geometry}.png"
 
 # Icons
@@ -17,9 +17,9 @@ if [[ "$layout" == "TRUE" ]]; then
 	window=" "
 	area="󰩬 "
 else
-	screen="󰹑   Full-screen mode"
-	window="   Window mode"
-	area="󰩬   Rectangular mode"
+	screen="󰹑   Pantalla Completa"
+	window="   Ventana"
+	area="󰩬   Recorte de Pantalla"
 fi
 
 # take shots
@@ -28,7 +28,8 @@ shotnow () {
 }
 
 shotwindow () {
-	cd ${dir} && sleep 1 | grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $file
+	# cd ${dir} && sleep 1 | grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focusd).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $file
+	cd ${dir} && sleep 1 | hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - $file
 }
 
 shotarea () {
@@ -43,12 +44,14 @@ fi
 # Variable passed to rofi
 options="$screen\n$window\n$area"
 
-chosen="$(echo -e "$options" |  $rofi_command -p 'Take a screenshot' -dmenu -selected-row 0)"
+chosen="$(echo -e "$options" |  $rofi_command -p 'Capturar Pantalla' -dmenu -selected-row 0)"
 case $chosen in
     $screen)
+		sleep 1
 		shotnow
         ;;
     $window)
+		sleep 1
 		shotwindow
         ;;
 	$area)
