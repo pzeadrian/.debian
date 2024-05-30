@@ -30,8 +30,8 @@
     default_border pixel 2
     smart_borders on
 
-    titlebar_border_thickness 0
-    titlebar_padding 0
+    titlebar_border_thickness 1
+    titlebar_padding 5 2 5 2
     title_align left
     for_window [title="."] title_format "%title"
 
