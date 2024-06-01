@@ -77,7 +77,7 @@ Install some basic packages.
 ```sh
 sudo apt install sway xwayland waybar rofi alacritty firefox-esr wl-clipboard
 thunar thunar-archive-plugin pipewire pipewire-jack pipewire-audio
-pavucontrol blueman gvfs gvfs-backends gvfs-fuse libsmbclient
+pavucontrol blueman gvfs gvfs-backends gvfs-fuse libsmbclient fish
 ffmpegthumbnailer tumbler xdg-desktop-portal-gtk policykit-1-gnome
 materia-gtk-theme materia-kde papirus-icon-theme qt5-style-kvantum
 network-manager-gnome btop neofetch mpv swayimg gnome-keyring grim

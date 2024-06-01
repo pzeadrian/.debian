@@ -8,8 +8,9 @@ if [ -d "$HOME/Documents/" ]; then
     cd
     rm -r $HOME/Documents/.debian/apps/*
     # 
-    # Bash
+    # Bash and Fish
     cp -f $HOME/.bashrc $HOME/Documents/.debian/apps/
+    cp -rf $HOME/.config/fish $HOME/Documents/.debian/apps/
     # 
     # Alacritty
     cp -rf $HOME/.config/alacritty/ $HOME/Documents/.debian/apps/
