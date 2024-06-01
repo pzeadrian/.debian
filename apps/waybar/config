@@ -58,8 +58,8 @@
 		"format-icons": [""]
 	},
 	"tray": {
-		"icon-size": 20,
-		"spacing": 5
+		"icon-size": 15,
+		"spacing": 15
 	},
 	//"network": {
 	//	"tooltip": false,
@@ -97,9 +97,7 @@
 		"format": " {}%"
 	},
 	"sway/language": {
-		"format": "{}",
-                "format-es": "ES",
-                "format-en": "EN"
+		"format": "{shortDescription}",
         },
 	},
     "clock": {

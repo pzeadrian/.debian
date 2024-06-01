@@ -130,7 +130,7 @@
     bindsym $mod+Shift+c exec ~/.config/rofi/bin/delboard
     bindsym $mod+Control+c exec ~/.config/rofi/bin/wipeboard
     bindsym $mod+Escape exec ~/.config/rofi/bin/filesearch
-    bindsym Alt+Tab exec ~/.config/rofi/bin/multitasking
+#   bindsym Alt+Tab exec ~/.config/rofi/bin/multitasking
     bindsym $mod+Control+p exec ~/.config/rofi/bin/powermenu
 
     # Brightness Control
@@ -142,9 +142,14 @@
     bindsym $mod+Alt+g exec pkill gammastep
 
     # Volume Control
-    bindsym $mod+Control+equal exec amixer set Master 5%+
-    bindsym $mod+Control+minus exec amixer set Master 5%-
-    bindsym $mod+Control+m exec amixer set Master toggle
+    # bindsym $mod+Control+equal exec amixer set Master 5%+
+    # bindsym $mod+Control+minus exec amixer set Master 5%-
+    # bindsym $mod+Control+m exec amixer set Master toggle
+    bindsym $mod+Control+equal exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym $mod+Control+minus exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym $mod+Control+m exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -215,6 +220,7 @@
     # respectively.
     bindsym $mod+h splith
     bindsym $mod+v splitv
+    bindsym $mod+Control+0 split none
 
     # Move focus to the parent container
     bindsym $mod+x focus parent
