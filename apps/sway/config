@@ -12,7 +12,7 @@
     # Keyboard Layout
     input "type:keyboard" {
         xkb_layout us,latam
-        xkb_options grp:win_space_toggle
+        xkb_options grp:alt_space_toggle
         xkb_numlock enabled
     }
 
@@ -115,7 +115,7 @@
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+q kill
+    bindsym $mod+Shift+q kill
 
     # Rofi Utilities
     bindsym $mod+a exec "rofi -show rofi-sound -modi "rofi-sound:$HOME/.config/rofi/bin/audio-op" -theme $HOME/.config/rofi/config/standardtheme.rasi"
@@ -138,7 +138,7 @@
     bindsym $mod+Alt+minus exec brightnessctl set 5%-
 
     # Gammastep
-    bindsym $mod+Control+g exec gammastep -O 5000
+    bindsym $mod+Control+g exec gammastep -O 4500
     bindsym $mod+Alt+g exec pkill gammastep
 
     # Volume Control
@@ -156,7 +156,7 @@
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+q reload
+    bindsym $mod+Control+q reload
 
 ## Apps
 
@@ -237,7 +237,7 @@
     bindsym $mod+t floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym Alt+space focus mode_toggle
+    bindsym $mod+space focus mode_toggle
 
 ## Scratchpad:
 
@@ -272,12 +272,12 @@
     for_window [app_id="blueman-manager"] floating enable, resize set 400 400
 
 ## Thunar:
-    for_window [app_id="Thunar"] floating enable, resize set 700 500
-    for_window [app_id="thunar"] floating enable, resize set 700 500
+    for_window [app_id="Thunar"] floating enable, resize set 950 650
+    for_window [app_id="thunar"] floating enable, resize set 950 650
 
 ## Alacritty:
-    for_window [app_id="Alacritty"] floating enable
-    for_window [app_id="alacritty"] floating enable
+    for_window [app_id="Alacritty"] floating enable, resize set 900 650
+    for_window [app_id="alacritty"] floating enable, set resize set 900 650
 
 ## Pavucontrol:
     for_window [app_id="pavucontrol"] floating enable
