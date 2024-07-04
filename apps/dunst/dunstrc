@@ -246,7 +246,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -theme "/home/eadrpz/.config/rofi/config/standardtheme.rasi" -p dunst :
+    dmenu = /usr/bin/dmenu -theme "/home/pzeadrian/.config/rofi/config/standardtheme.rasi" -p dunst :
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open

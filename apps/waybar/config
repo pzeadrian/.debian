@@ -1,6 +1,6 @@
 {
-	"layer": "top",
-	"position": "top",
+	"layer": "bottom",
+	"position": "bottom",
 	"margin": "0 0 0 0",
 	"modules-left": [ "custom/logo", "custom/finder", "sway/window", "custom/archivo", "custom/ejecutar", "custom/portapapeles" ],
 	"modules-center": ["sway/workspaces"],
